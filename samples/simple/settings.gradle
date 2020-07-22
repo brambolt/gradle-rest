@@ -1,0 +1,9 @@
+
+pluginManagement {
+  repositories {
+    mavenLocal()
+  }
+}
+
+rootProject.name = 'gradle-rest-simple-sample'
+
