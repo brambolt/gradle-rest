@@ -15,7 +15,7 @@
  */
 
 plugins {
-  id 'com.brambolt.gradle.pluginbuild' apply false
+  id 'com.brambolt.gradle.build.plugin' apply false
   id 'com.brambolt.gradle.testkit' apply false
 }
 
@@ -36,29 +36,22 @@ ext {
     name: 'The Apache Software License, Version 2.0',
     url: 'http://www.apache.org/licenses/LICENSE-2.0.txt'
   ]]
-  pluginClass = 'com.brambolt.gradle.PatchingPlugin'
-  pluginDisplayName = 'Brambolt Patching plugin'
+  pluginClass = 'com.brambolt.gradle.RestApiPlugin'
+  pluginDisplayName = 'Brambolt REST API plugin'
   pluginId = 'com.brambolt.gradle.rest'
-  pluginTags = ['REST']
+  pluginTags = ['jetty', 'REST']
   pluginWebsite = 'https://github.com/brambolt/gradle-rest'
-  projectVersion = bramboltProjectVersion
+  release = bramboltRelease
   vcsUrl = 'https://github.com/brambolt/gradle-rest'
 }
 
-apply plugin: 'com.brambolt.gradle.pluginbuild'
+apply plugin: 'com.brambolt.gradle.build.plugin'
 apply plugin: 'com.brambolt.gradle.testkit'
 
 dependencies {
-  compile 'com.brambolt:brambolt-rt:SNAPSHOT'
-  compile 'com.brambolt.gradle:brambolt-gradle-rt:SNAPSHOT'
-  // Velocity is used for JSON VTL templates:
-  compile 'com.brambolt.gradle:brambolt-gradle-velocity:SNAPSHOT'
-  /* compile ('org.apache.velocity:velocity-tools:2.0') {
-    exclude group: 'log4j', module: 'log4j'
-    exclude group: 'logkit', module: 'logkit'
-    exclude group: 'avalon-framework', module: 'avalon-framework'
-    exclude group: 'javax.servlet', module: 'servlet-api'
-  } */
-  compile "org.eclipse.jetty:jetty-client:${jettyVersion}"
+  api "org.eclipse.jetty:jetty-client:${jettyVersion}"
+  implementation "com.brambolt:brambolt-rt:${version}"
+  implementation "com.brambolt.gradle:brambolt-gradle-rt:${version}"
+  implementation "com.brambolt.gradle:brambolt-gradle-velocity:${version}"
 }
 
