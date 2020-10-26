@@ -5,5 +5,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = 'gradle-rest-simple-sample'
+rootProject.name = 'brambolt-gradle-rest-simple-sample'
 

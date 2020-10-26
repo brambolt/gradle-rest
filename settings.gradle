@@ -26,5 +26,5 @@ pluginManagement {
   }
 }
 
-rootProject.name = 'gradle-rest'
+rootProject.name = 'brambolt-gradle-rest'
 
