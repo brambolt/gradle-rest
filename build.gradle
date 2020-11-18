@@ -19,7 +19,7 @@ plugins {
   id 'com.brambolt.gradle.testkit' apply false
 }
 
-description = 'REST API utility'
+description = 'REST API porcelain for the Jetty HTTP client'
 group = 'com.brambolt.gradle'
 
 ext {
@@ -40,7 +40,7 @@ ext {
   pluginClass = 'com.brambolt.gradle.RestApiPlugin'
   pluginDisplayName = 'Brambolt REST API plugin'
   pluginId = 'com.brambolt.gradle.rest'
-  pluginTags = ['jetty', 'REST']
+  pluginTags = ['jetty', 'REST', 'API', 'porcelain']
   pluginWebsite = 'https://github.com/brambolt/gradle-rest'
   release = bramboltRelease
   vcsUrl = 'https://github.com/brambolt/gradle-rest'
